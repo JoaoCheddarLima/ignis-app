@@ -26,7 +26,7 @@ export default function Home() {
     <div>
       <MainTopNav />
       <div className='w-3/4 mx-auto'>
-        <div className='items-center flex flex-col py-10 border-b-2 border-[#141414]'>
+        <div className='items-center flex flex-col py-20 border-b-2 border-[#141414]'>
           <h1
             className={`text-8xl font-extrabold ${ITW.className}`}
             style={
@@ -52,8 +52,8 @@ export default function Home() {
             {Texts.SLOGAN}
           </h1>
           <p className={`text-gray-400 max-w-3xl text-center font-thin pt-2`}>
-            Empower your work with {`${Texts.BRAND_NAME}`}, a definitive solution for your daily tasks! Upgrade your work
-            quality and productivity, find out more about our services and how we can help you.
+            Empower your work with {`${Texts.BRAND_NAME}`}, a definitive solution for your repetitive social tasks! Upgrade your
+            quality and productivity, find out more about us and how do we empower you.
           </p>
 
           <div className='flex gap-3 py-5'>
