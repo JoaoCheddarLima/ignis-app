@@ -7,7 +7,10 @@ import { Texts } from '@/app/lib/texts';
 
 export default function MainTopNav() {
     return (
-        <div className='mx-auto place-items-center grid grid-cols-3 content-center py-2 border-b-2 border-[#141414] flex-wrap font-thin'>
+        <div className='
+        mx-auto place-items-center grid grid-cols-2 content-center py-2 border-b-2 border-[#141414] flex-wrap font-thin
+        md:grid-cols-3
+        '>
             <Link
                 className='flex items-center'
                 href='/'
@@ -22,7 +25,7 @@ export default function MainTopNav() {
                     {Texts.BRAND_NAME}
                 </h1>
             </Link>
-            <div className='flex items-center gap-5 text-sm text-gray-300'>
+            <div className='items-center gap-5 text-sm text-gray-300 hidden md:flex'>
                 {
                     [
                         'Services',

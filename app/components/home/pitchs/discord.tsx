@@ -2,9 +2,12 @@ import { DashboardButton } from '../dashboard';
 
 export function DiscordPitch() {
     return (
-        <div className="flex gap-4 justify-between px-4 py-10 border-b-2 border-[#141414]">
-            <div>
-                <div className="flex flex-col gap-4 w-1/2">
+        <div className="
+        block gap-4 justify-center px-4 py-10 border-b-2 border-[#141414]
+        lg:flex lg:justify-between
+        ">
+            <div className='lg:w-1/2'>
+                <div className="flex flex-col gap-4">
                     <h1 className="text-5xl font-bold flex gap-2 flex-wrap">
                         <h1 className="text-blue-500">
                             Discord
@@ -20,7 +23,7 @@ export function DiscordPitch() {
                     <DashboardButton label="Start now" />
                 </div>
             </div>
-            <img src="/satisfied.png" alt="happy_customer" className="w-[20%]" />
+            <img src="/satisfied.png" alt="happy_customer" className="hidden lg:block w-52" />
         </div>
     )
 }

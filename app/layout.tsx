@@ -23,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className='font-mono text-lg text-white'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <NextAuthProvider>
         <body className={inter.className}>
           {children}

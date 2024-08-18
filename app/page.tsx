@@ -28,7 +28,7 @@ export default function Home() {
       <div className='w-3/4 mx-auto'>
         <div className='items-center flex flex-col py-20 border-b-2 border-[#141414]'>
           <h1
-            className={`text-8xl font-extrabold ${ITW.className}`}
+            className={`text-8xl font-extrabold ${ITW.className} text-center`}
             style={
               {
                 background: "linear-gradient(to right, #e9e9e9, #d6d6d6)",
@@ -40,7 +40,7 @@ export default function Home() {
             {`${Texts.BRAND_NAME}`}
           </h1>
           <h1
-            className={`text-6xl font-extrabold p-1 ${ITW.className}`}
+            className={`text-6xl font-extrabold p-1 ${ITW.className} text-center`}
             style={
               {
                 background: "linear-gradient(to right, #A42A55, #F0C344, #F07A22, #EA973A)",
@@ -56,7 +56,7 @@ export default function Home() {
             quality and productivity, find out more about us and how do we empower you.
           </p>
 
-          <div className='flex gap-3 py-5'>
+          <div className='flex flex-col md:flex-row gap-3 py-5'>
             <DashboardButton />
             <Link href="/" className='text-gray-400 flex gap-1 items-center px-3 py-1 border-[1px] rounded-md'>
               Learn more
