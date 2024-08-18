@@ -1,11 +1,13 @@
 import mongoose, { Schema } from 'mongoose';
 
-const item = new Schema({ 
+const item = new Schema({
     name: { type: String, required: true, unique: true },
 
     isCustomer: { type: Boolean, default: false },
     mail: { type: String, default: null },
-    planExpiration: { type: Date, default: null }
+    planExpiration: { type: Date, default: null },
+
+    api_key: { type: String, default: null },
 });
 
 export interface IUser {

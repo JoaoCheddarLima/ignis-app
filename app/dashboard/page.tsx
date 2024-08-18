@@ -2,9 +2,13 @@
 
 export default function Home() {
     return (
-        <div>
+        <div className="flex">
+            <div className=''>
 
+            </div>
+            <div>
+
+            </div>
         </div>
-
     );
 }

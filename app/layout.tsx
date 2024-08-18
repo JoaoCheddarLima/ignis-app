@@ -1,19 +1,19 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
-import { Inter_Tight as Font } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-import MainTopNav from './components/nav/mainNav';
 import NextAuthProvider from './context/NextAuthProvider';
+import { Texts } from './lib/texts';
 
-const font = Font({
+const inter = Inter({
+  weight: '700',
   subsets: ['latin'],
-  weight: '900'
-});
+})
 
 export const metadata: Metadata = {
-  title: "Fire Automate",
-  description: "Empower your work with Fire Automate",
+  title: Texts.BRAND_NAME,
+  description: Texts.SLOGAN,
 };
 
 export default function RootLayout({
@@ -22,10 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className='font-mono text-lg'>
+    <html lang="en" className='font-mono text-lg text-white'>
       <NextAuthProvider>
-        <body className={font.className}>
-          <MainTopNav />
+        <body className={inter.className}>
           {children}
         </body>
       </NextAuthProvider>

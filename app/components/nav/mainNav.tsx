@@ -1,27 +1,11 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import BaseLoader from '../../loaders/loaderOne';
-import SmallProfile from '../smallProfile';
+import { Texts } from '@/app/lib/texts';
 
 export default function MainTopNav() {
-    const {
-        status,
-        data
-    } = useSession({
-        required: true,
-        onUnauthenticated() {
-            return window.location.href = '/api/auth/signin';
-        },
-    })
-
-    const user = data?.user;
-
-    console.log(user)
-
     return (
         <div className='mx-auto place-items-center grid grid-cols-3 content-center py-2 border-b-2 border-[#141414] flex-wrap font-thin'>
             <Link
@@ -35,7 +19,7 @@ export default function MainTopNav() {
                     height={64}
                 />
                 <h1 className='text-lg'>
-                    Fire Automate
+                    {Texts.BRAND_NAME}
                 </h1>
             </Link>
             <div className='flex items-center gap-5 text-sm text-gray-300'>
@@ -55,15 +39,12 @@ export default function MainTopNav() {
                     ))
                 }
             </div>
-            <section className='flex justify-end'>
-                {status === 'loading' && <BaseLoader label='Connecting..' size={24} direction='right' />}
-                {status === 'authenticated' && (
-                    <SmallProfile
-                        name={user?.name!}
-                        icon={user?.image!}
-                    />
-                )}
-            </section>
+            <Link
+                href='/api/auth/signin'
+                className='flex gap-1 items-center px-4 py-1 rounded-md bg-blue-600'
+            >
+                Sign in
+            </Link>
         </div>
 
     );
