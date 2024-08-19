@@ -8,12 +8,12 @@ export function MirrorPitch() {
         ">
             <div className='lg:w-1/2'>
                 <div className="flex flex-col gap-4">
-                    <h1 className="text-5xl font-bold flex gap-2 flex-wrap">
+                    <div className="text-5xl font-bold flex gap-2 flex-wrap">
                         <h1 className="text-blue-500">
                             Discord
                         </h1>
                         Mirror
-                    </h1>
+                    </div>
                     <p className="text-sm text-gray-400">
                         Mirror multiple channels easy and fast 24/7 to your server with our Discord Mirror bot, have all information you need in one place now.
                     </p>

@@ -1,5 +1,3 @@
-import { Session } from 'next-auth';
-
 import { IUser } from '../types';
 
 export class API {
@@ -22,7 +20,7 @@ export class API {
         return response.json();
     }
 
-    public static async getMe(data: Session): Promise<IUser | null> {
+    public static async getMe(): Promise<IUser | null> {
         return this.get('/user/me');
     }
 }

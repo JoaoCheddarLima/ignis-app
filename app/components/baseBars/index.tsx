@@ -10,6 +10,7 @@ export function BaseSideBars() {
                 {/* Main content */}
                 <div className='flex flex-col'>
                     {/* Api Status */}
+                    
                 </div>
             </div>
         </div>

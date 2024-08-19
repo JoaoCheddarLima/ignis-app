@@ -1,50 +1,20 @@
-import {
-  useEffect,
-  useState,
-} from 'react';
+import { useContext } from 'react';
 
-import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import ms from 'pretty-ms';
 import { FaShieldHeart } from 'react-icons/fa6';
 import { IoMdInformationCircle } from 'react-icons/io';
 
-import { API } from '@/app/lib/api';
-import { IUser } from '@/app/types';
+import { UserAuthContext } from '@/app/context/loggedUserProvider';
 
 import AuthProfile from '../../nav/auth';
 
 export function UserProfileNav() {
-    const [userData, setUserData] = useState({} as IUser)
-    const [planExpired, setPlanExpired] = useState(false)
-    const [loaded, setLoaded] = useState(false)
-
     const {
-        status,
-        data
-    } = useSession({
-        required: true,
-        onUnauthenticated() {
-            return window.location.href = '/api/auth/signin';
-        },
-    })
-
-    useEffect(() => {
-        if (data?.user) {
-            API.getMe(data)
-                .then((user) => {
-                    console.log(user)
-                    if (user) {
-                        setUserData(user)
-                        setPlanExpired(new Date(user.planExpiration).getTime() < Date.now())
-                        setLoaded(true)
-                    } else {
-                        return window.location.href = '/api/auth/signin';
-                    }
-                }
-                )
-        }
-    }, [data?.user])
+        loaded,
+        planExpired,
+        userData
+    } = useContext(UserAuthContext)
 
     return (
         <div className='flex justify-around w-full h-20 border-b border-black bg-[#171d27] items-center align-middle p-5'>
@@ -82,7 +52,7 @@ export function UserProfileNav() {
                 '>
                     👋 Hello,
                     <strong className='text-orange-400'>
-                        {data?.user?.name}!
+                        {userData?.name}!
                     </strong>
                 </div>
             }
