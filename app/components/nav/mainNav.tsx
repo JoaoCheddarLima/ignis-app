@@ -1,11 +1,21 @@
 'use client';
 
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Texts } from '@/app/lib/texts';
 
+import SmallProfile from '../profile/smallProfile';
+
 export default function MainTopNav() {
+    const {
+        status,
+        data
+    } = useSession()
+
+    const user = data?.user;
+
     return (
         <div className='
         mx-auto place-items-center grid grid-cols-2 content-center py-2 border-b-2 border-[#141414] flex-wrap font-thin
@@ -42,12 +52,23 @@ export default function MainTopNav() {
                     ))
                 }
             </div>
-            <Link
-                href='/api/auth/signin'
-                className='flex gap-1 items-center px-4 py-1 rounded-md bg-blue-600'
-            >
-                Sign in
-            </Link>
+            {
+                data?.user ?
+                    (
+                        <SmallProfile
+                            name={user?.name!}
+                            icon={user?.image!}
+                        />
+                    ) :
+                    (
+                        <Link
+                            href='/api/auth/signin'
+                            className='flex gap-1 items-center px-4 py-1 rounded-md bg-blue-600'
+                        >
+                            Sign in
+                        </Link>
+                    )
+            }
         </div>
 
     );

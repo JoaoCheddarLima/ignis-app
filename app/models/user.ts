@@ -10,13 +10,6 @@ const item = new Schema({
     api_key: { type: String, default: null },
 });
 
-export interface IUser {
-    name: string;
-    isCustomer: boolean;
-    planExpiration: Date;
-    mail: string;
-}
-
 let modeledFix = mongoose.models.User
 
 if (!modeledFix) {

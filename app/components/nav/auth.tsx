@@ -1,22 +1,21 @@
 'use client'
 import { useSession } from 'next-auth/react';
 
-import BaseLoader from '../../loaders/loaderOne';
-import SmallProfile from '../smallProfile';
-
-const {
-    status,
-    data
-} = useSession({
-    required: true,
-    onUnauthenticated() {
-        return window.location.href = '/api/auth/signin';
-    },
-})
-
-const user = data?.user;
+import BaseLoader from '../loaders/loaderOne';
+import SmallProfile from '../profile/smallProfile';
 
 export default function AuthProfile() {
+    const {
+        status,
+        data
+    } = useSession({
+        required: true,
+        onUnauthenticated() {
+            return window.location.href = '/api/auth/signin';
+        },
+    })
+
+    const user = data?.user;
 
     return (
         <div>

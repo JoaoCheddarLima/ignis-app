@@ -22,10 +22,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className='font-mono text-lg text-white'>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <html lang="en" className='font-mono text-lg text-white h-full w-full'>
+      <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0"></meta>
       <NextAuthProvider>
-        <body className={inter.className}>
+        <body className={`${inter.className} h-full w-full`}>
           {children}
         </body>
       </NextAuthProvider>
