@@ -8,12 +8,12 @@ export function DiscordPitch() {
         ">
             <div className='lg:w-1/2'>
                 <div className="flex flex-col gap-4">
-                    <h1 className="text-5xl font-bold flex gap-2 flex-wrap">
+                    <div className="text-5xl font-bold flex gap-2 flex-wrap">
                         <h1 className="text-blue-500">
                             Discord
                         </h1>
                         Smart Account
-                    </h1>
+                    </div>
                     <p className="text-sm text-gray-400">
                         Stop repeating yourself, turn your account into a smart account with our Discord services, and save time for more important tasks,
                         send messages to multiple servers, and channels with a single click!

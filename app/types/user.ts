@@ -11,3 +11,11 @@ export interface IUser {
     mail: string;
     api_key: string;
 }
+
+export interface IUserResponse {
+    name: string;
+    isCustomer: boolean;
+    planExpiration: Date;
+    mail: string;
+    api_key: boolean;
+}

@@ -1,14 +1,19 @@
 'use client';
 
+import { useContext } from 'react';
+
 import { BaseSideBars } from '../components/baseBars';
-import DashboardData from './components/page';
+import { UserAuthContext } from '../context/loggedUserProvider';
+import Settings from './components/page';
 
 export default function Home() {
-
+    const {
+        loaded
+    } = useContext(UserAuthContext)
     return (
         <div className="flex w-full h-full">
             <BaseSideBars>
-                <DashboardData />
+                <Settings />
             </BaseSideBars>
         </div>
     );
