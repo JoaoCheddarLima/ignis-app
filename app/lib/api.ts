@@ -1,4 +1,4 @@
-import { IUser } from '../types';
+import { IUserResponse } from '../types';
 
 export class API {
     private static readonly BASE_URL = '/api';
@@ -20,7 +20,13 @@ export class API {
         return response.json();
     }
 
-    public static async getMe(): Promise<IUser | null> {
+    public static async getMe(): Promise<IUserResponse | null> {
         return this.get('/user/me');
+    }
+
+    public static async updateApiKey(discordApiKey: string): Promise<IUserResponse | null> {
+        return this.post('/user/me', {
+            discordApiKey
+        });
     }
 }

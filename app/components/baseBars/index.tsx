@@ -1,18 +1,23 @@
+import { Toaster } from 'react-hot-toast';
+
+import UserAuthProvider from '@/app/context/loggedUserProvider';
+
 import { SideBarNav } from './sidebar';
 import { UserProfileNav } from './topBar';
 
-export function BaseSideBars() {
+export function BaseSideBars({
+    children
+}: {
+    children?: React.ReactNode
+}) {
     return (
-        <div className='flex w-full'>
+        <UserAuthProvider>
+            <Toaster />
             <SideBarNav />
-            <UserProfileNav />
-            <div>
-                {/* Main content */}
-                <div className='flex flex-col'>
-                    {/* Api Status */}
-                    
-                </div>
+            <div className='w-full'>
+                <UserProfileNav />
+                {children}
             </div>
-        </div>
+        </UserAuthProvider>
     )
 }

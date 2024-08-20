@@ -1,6 +1,6 @@
 import { Session } from 'next-auth';
 
-import { IUser } from '@/app/types';
+import { IUserResponse } from '@/app/types';
 
 import { User } from '../models';
 import connectToDb from './db';
@@ -10,20 +10,23 @@ export class UserHandler {
         await connectToDb();
     }
 
-    private static async findAndParseUser(user: Session): Promise<IUser> {
-        const parsedUser = await User.findOne({
+    private static async findAndParseUser(user: Session): Promise<IUserResponse> {
+        const parsedUser = (await User.findOne({
             name: user.user?.name
-        })
-            .select({
-                name: 1,
-                isCustomer: 1,
-                planExpiration: 1
-            });
+        }).select({
+            _id: 0,
+            __v: 0
+        })).toObject();
 
-        return parsedUser;
+        const res: IUserResponse = {
+            ...parsedUser,
+            api_key: parsedUser.api_key !== null
+        }
+
+        return res;
     }
 
-    public static async getUser(user: Session): Promise<IUser> {
+    public static async getUser(user: Session): Promise<IUserResponse> {
         await UserHandler.connect();
 
         const exists = (await User.findOne({
@@ -38,8 +41,26 @@ export class UserHandler {
             });
         }
 
-        const dbUser = await this.findAndParseUser(user);
+        return await this.findAndParseUser(user);;
+    }
 
-        return dbUser;
+    public static async updateApiKey(user: Session, data: {
+        discordApiKey: string
+    }): Promise<IUserResponse> {
+        await UserHandler.connect();
+
+        await this.getUser(user);
+
+        await User
+            .updateOne(
+                {
+                    name: user.user?.name
+                },
+                {
+                    api_key: data.discordApiKey
+                }
+            );
+
+        return await this.findAndParseUser(user);
     }
 }

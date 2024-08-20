@@ -5,16 +5,16 @@ import {
 } from 'react';
 
 import { API } from '../lib/api';
-import { IUser } from '../types';
+import { IUserResponse } from '../types';
 
 export const UserAuthContext = createContext({} as {
-    userData: IUser;
+    userData: IUserResponse;
     planExpired: boolean;
     loaded: boolean;
 })
 
 export default function UserAuthProvider({ children }: { children: React.ReactNode }) {
-    const [userData, setUserData] = useState({} as IUser)
+    const [userData, setUserData] = useState({} as IUserResponse)
     const [planExpired, setPlanExpired] = useState(false)
     const [loaded, setLoaded] = useState(false)
 

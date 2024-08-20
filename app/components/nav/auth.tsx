@@ -21,7 +21,7 @@ export default function AuthProfile() {
     return (
         <div>
             <section className='flex justify-end'>
-                {status === 'loading' && <BaseLoader label='Connecting..' size={24} direction='right' />}
+                {status === 'loading' && <BaseLoader label='Connecting...' size={24} direction='right' />}
                 {status === 'authenticated' && (
                     <SmallProfile
                         name={userData?.name!}
