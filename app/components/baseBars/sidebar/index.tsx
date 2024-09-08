@@ -13,29 +13,29 @@ export function SideBarNav() {
         <div className='flex flex-col justify-between p-4 w-20 border-r h-full border-gray-950 bg-[#171d27] items-center'>
             <div className='flex flex-col gap-8'>
                 <Link className="cursor-pointer w-11 hover:bg-gray-800 rounded-md"
-                    href='/dashboard'
+                    href='/user/dashboard'
                 >
                     <img src="/logo.png" alt={`${Texts.BRAND_NAME} Logo`} />
                 </Link>
                 <Link className="cursor-pointer w-11 flex justify-center hover:bg-gray-800 rounded-md p-2"
-                    href='/flows'
+                    href='/user/flows'
                 >
                     <PiTreeStructureBold className='text-white text-2xl' />
                 </Link>
                 <Link className="cursor-pointer w-11 flex justify-center hover:bg-gray-800 rounded-md p-2"
-                    href='/history'
+                    href='/user/history'
                 >
                     <RiHistoryLine className='text-white text-2xl' />
                 </Link>
                 <Link className="cursor-pointer w-11 flex justify-center hover:bg-gray-800 rounded-md p-2"
-                    href='/settings'
-                >
-                    <HiCog className='text-white text-2xl' />
-                </Link>
-                <Link className="cursor-pointer w-11 flex justify-center hover:bg-gray-800 rounded-md p-2"
-                    href='/billing'
+                    href='/user/billing'
                 >
                     <BiSolidCreditCardFront className='text-white text-2xl' />
+                </Link>
+                <Link className="cursor-pointer w-11 flex justify-center hover:bg-gray-800 rounded-md p-2"
+                    href='/user/settings'
+                >
+                    <HiCog className='text-white text-2xl' />
                 </Link>
             </div>
             <div className='flex flex-col gap-8 pb-4'>

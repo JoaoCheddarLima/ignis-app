@@ -12,8 +12,8 @@ import BaseCard from '@/app/components/cards/baseCard';
 import Description from '@/app/components/text/description';
 import Title from '@/app/components/text/title';
 import { UserAuthContext } from '@/app/context/loggedUserProvider';
-import Warning from '@/app/dashboard/components/notification';
 import { API } from '@/app/lib/api';
+import Warning from '@/app/user/dashboard/components/notification';
 
 export default function Settings() {
     const [api_key, setApiKey] = useState('')

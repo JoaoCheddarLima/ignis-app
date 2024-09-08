@@ -1,7 +1,5 @@
 import { Toaster } from 'react-hot-toast';
 
-import UserAuthProvider from '@/app/context/loggedUserProvider';
-
 import { SideBarNav } from './sidebar';
 import { UserProfileNav } from './topBar';
 
@@ -11,13 +9,13 @@ export function BaseSideBars({
     children?: React.ReactNode
 }) {
     return (
-        <UserAuthProvider>
+        <div className='flex w-full h-full'>
             <Toaster />
             <SideBarNav />
             <div className='w-full'>
                 <UserProfileNav />
                 {children}
             </div>
-        </UserAuthProvider>
+        </div>
     )
 }

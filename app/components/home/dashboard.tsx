@@ -11,7 +11,7 @@ export function DashboardButton(
         }
 ) {
     return (
-        <Link href="/dashboard" className='flex gap-1 items-center px-4 py-1 rounded-md bg-blue-600 w-fit'>
+        <Link href="/user/dashboard" className='flex gap-1 items-center px-4 py-1 rounded-md bg-blue-600 w-fit'>
             {label}
             <ExitToApp />
         </Link>

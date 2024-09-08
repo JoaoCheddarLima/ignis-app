@@ -14,7 +14,7 @@ export default function SmallProfile(
     return (
         <div className='flex gap-2 items-center'>
             <Link
-                href='/dashboard'
+                href='/user/dashboard'
             >
                 <Image
                     src={icon}
