@@ -1,10 +1,11 @@
 'use client';
 
-import FlowsPage from '../components/flows';
+import Content from '@/app/components/page/content';
 
 export default function Home() {
-
     return (
-        <FlowsPage />
+        <Content>
+            test
+        </Content>
     );
 }

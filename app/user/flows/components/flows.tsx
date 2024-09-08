@@ -4,25 +4,24 @@ import Link from 'next/link';
 import { FaDiscord } from 'react-icons/fa';
 
 import BaseCard from '@/app/components/cards/baseCard';
+import Content from '@/app/components/page/content';
 import Description from '@/app/components/text/description';
 import Title from '@/app/components/text/title';
 
 export default function FlowsPage() {
 
     return (
-        <div className="flex flex-col gap-12 mx-auto w-3/4 h-full py-10">
-            <div>
-                <BaseCard>
-                    <div className='flex flex-col gap-2'>
-                        <Title>
-                            My automation flows
-                        </Title>
-                        <Description>
-                            This is where you can create and manage your automation flows.
-                        </Description>
-                    </div>
-                </BaseCard>
-            </div>
+        <Content>
+            <BaseCard>
+                <div className='flex flex-col gap-2'>
+                    <Title>
+                        My automation flows
+                    </Title>
+                    <Description>
+                        This is where you can create and manage your automation flows.
+                    </Description>
+                </div>
+            </BaseCard>
             <div className='grid grid-cols-1 md:grid-cols-2 text-center gap-5 md:gap-12'>
                 <Link href='/user/flows/discord'>
                     <BaseCard>
@@ -47,6 +46,6 @@ export default function FlowsPage() {
                     </BaseCard>
                 </Link> */}
             </div>
-        </div>
+        </Content>
     );
 }

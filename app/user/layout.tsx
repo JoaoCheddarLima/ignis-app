@@ -11,8 +11,8 @@ export default function RootLayout({
     return (
         <UserAuthProvider>
             <BaseSideBars>
-                {children}
+                    {children}
             </BaseSideBars>
-        </UserAuthProvider>
+        </UserAuthProvider >
     );
 }
