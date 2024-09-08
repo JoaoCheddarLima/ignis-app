@@ -1,10 +1,38 @@
 'use client';
 
-import DashboardData from './components/page';
+import { useContext } from 'react';
 
-export default function Home() {
+import BaseCard from '@/app/components/cards/baseCard';
+import Content from '@/app/components/page/content';
+import { UserAuthContext } from '@/app/context/loggedUserProvider';
+
+import Warning from './components/notification';
+
+export default function DashboardData() {
+    const {
+        loaded,
+        planExpired,
+        userData
+    } = useContext(UserAuthContext)
 
     return (
-        <DashboardData />
-    );
+        loaded && (
+            <Content>
+                <BaseCard>
+                    <div className='flex justify-center'>
+                        Notifications
+                    </div>
+                    {
+                        !userData?.api_key &&
+                        <Warning
+                            label='Discord API Key not set or expired'
+                            level='warning'
+                            refTo='/settings'
+                            refType='internal'
+                        />
+                    }
+                </BaseCard>
+            </Content>
+        )
+    )
 }
