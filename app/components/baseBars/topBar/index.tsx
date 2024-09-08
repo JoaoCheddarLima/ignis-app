@@ -23,7 +23,7 @@ export function UserProfileNav() {
                 <div className='flex flex-col gap-1'>
                     {
                         planExpired && loaded &&
-                        <Link href='/billing' className='flex gap-2 items-center'>
+                        <Link href='/user/billing' className='flex gap-2 items-center'>
                             <IoMdInformationCircle className='text-yellow-300' />
                             <span className='text-yellow-300'>
                                 No active plan
@@ -32,7 +32,7 @@ export function UserProfileNav() {
                     }
                     {
                         !planExpired && loaded &&
-                        <Link href='/billing'>
+                        <Link href='/user/billing'>
                             <FaShieldHeart />
                             <span className='text-white'>
                                 Renew in

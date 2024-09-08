@@ -4,7 +4,7 @@ export default function Title({
     children?: React.ReactNode
 }) {
     return (
-        <div className='flex gap-1 justify-center text-2xl'>
+        <div className='items-center flex gap-1 justify-center text-2xl text-center flex-wrap'>
             {children}
         </div>
     )

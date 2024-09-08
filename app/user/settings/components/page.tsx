@@ -12,8 +12,8 @@ import BaseCard from '@/app/components/cards/baseCard';
 import Description from '@/app/components/text/description';
 import Title from '@/app/components/text/title';
 import { UserAuthContext } from '@/app/context/loggedUserProvider';
-import Warning from '@/app/dashboard/components/notification';
 import { API } from '@/app/lib/api';
+import Warning from '@/app/user/dashboard/components/notification';
 
 export default function Settings() {
     const [api_key, setApiKey] = useState('')
@@ -35,7 +35,7 @@ export default function Settings() {
     }
 
     return (
-        <div className="flex flex-col gap-12 mx-auto w-3/4 h-full py-10">
+        <div className="flex flex-col gap-12 mx-auto w-3/4 py-10">
             <BaseCard>
                 <Title>
                     Settings
@@ -46,14 +46,12 @@ export default function Settings() {
             </BaseCard>
             <BaseCard>
                 <div className='flex flex-col justify-center gap-3'>
-                    <div className='flex gap-2 items-center justify-center'>
-                        <Title>
-                            <h1 className='text-blue-500'>
-                                Discord
-                            </h1>
-                            API Key
-                        </Title>
-                    </div>
+                    <Title>
+                        <h1 className='text-blue-500'>
+                            Discord
+                        </h1>
+                        API Key
+                    </Title>
                     <Description>
                         Your discord account API key for making mirrors/sending automated messages on your behalf.
                     </Description>
@@ -68,7 +66,7 @@ export default function Settings() {
                                 onChange={(e) => setApiKey(e.target.value)}
                                 type='password'
                                 placeholder={`${userData.api_key ? 'Change API Key' : 'Paste API Key'}`}
-                                className='px-2 border border-gray-300 rounded-md text-black' />
+                                className='px-2 border border-gray-300 rounded-md text-black w-2/3' />
                             <button
                                 onClick={saveApiKey}
                                 className='bg-blue-500 text-white p-2 rounded-md'
@@ -77,7 +75,7 @@ export default function Settings() {
                             </button>
                         </form>
                     </div>
-                    <Warning 
+                    <Warning
                         label='Tutorial'
                         level='info'
                         refTo='https://www.youtube.com/watch?v=riYk0PDJm6w'
