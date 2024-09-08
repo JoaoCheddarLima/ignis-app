@@ -24,7 +24,9 @@ export default function FlowsPage() {
             </BaseCard>
             <div className='grid grid-cols-1 md:grid-cols-2 text-center gap-5 md:gap-12'>
                 <Link href='/user/flows/discord'>
-                    <BaseCard>
+                    <BaseCard
+                        clickable={true}
+                    >
                         <div className='flex gap-2 justify-center items-center'>
                             <FaDiscord size={50} className='text-blue-500' />
                             <h1 className='text-blue-500'>
