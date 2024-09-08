@@ -62,7 +62,7 @@ export default function Settings() {
                                 <IoWarning className='text-yellow-500 text-2xl' />
                             )
                         }
-                        <form className='flex gap-1'>
+                        <div className='flex gap-1'>
                             <input
                                 onChange={(e) => setApiKey(e.target.value)}
                                 type='password'
@@ -74,7 +74,7 @@ export default function Settings() {
                             >
                                 Save
                             </button>
-                        </form>
+                        </div>
                     </div>
                     <Warning
                         label='Tutorial'

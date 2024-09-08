@@ -10,10 +10,10 @@
     "test": "yarn build && yarn start"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.0",
+    "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.7",
-    "@mui/material": "^5.16.7",
+    "@mui/material": "^6.0.2",
     "mongoose": "^8.5.3",
     "next": "14.2.5",
     "next-auth": "^4.24.7",
